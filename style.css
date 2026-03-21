@@ -1,0 +1,380 @@
+/* ====== Reset básico ====== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ====== Layout global ====== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(245, 245, 245, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.top-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #444;
+  justify-self: flex-start;
+}
+
+.nav-link[data-nav="contato"] {
+  justify-self: flex-end;
+  text-align: right;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+main#app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ====== Tipografia utilitária ====== */
+.page-title {
+  font-size: 1.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.page-subtitle {
+  font-size: 1.02rem;
+  color: #555;
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.home-hero {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.home-hero .page-title {
+  margin-bottom: 0.6rem;
+}
+
+.home-hero .page-subtitle {
+  margin-inline: auto;
+  margin-bottom: 0;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  border-bottom: 1px solid transparent;
+}
+
+.breadcrumb a:hover {
+  border-color: #777;
+}
+
+/* ====== Grid de produtos (homepage) ====== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.product-card {
+  border-radius: 0;
+  background: transparent;
+  transition: transform 180ms ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+}
+
+.product-card-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f8f8f8;
+}
+
+.product-card-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.product-card-meta {
+  font-size: 0.8rem;
+  color: #f0f0f0;
+}
+
+.product-card-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background: #e8e8e8;
+  aspect-ratio: 4 / 3;
+}
+
+.product-card-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 220ms ease-out;
+}
+
+.product-card:hover .product-card-cover-img {
+  transform: scale(1.06);
+}
+
+.product-card-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.7)
+  );
+  pointer-events: none;
+}
+
+.product-card-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.product-card-title {
+  font-size: 1.1rem;
+}
+
+.product-card-year {
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+/* ====== Galeria de produto ====== */
+.product-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.product-title {
+  font-size: 1.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.product-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #e8e8e8;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 220ms ease-out;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.06);
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+/* 3 colunas desktop, 2 tablet, 1 mobile */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== Contato ====== */
+.contact-wrapper {
+  max-width: 520px;
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.contact-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #999;
+}
+
+.contact-value {
+  margin-top: 0.25rem;
+}
+
+.contact-value a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.contact-value a:hover {
+  border-color: #000;
+}
+
+/* ====== Utilidades ====== */
+.fade-in {
+  animation: fadeIn 260ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    padding-inline: 1.25rem;
+  }
+
+  main#app {
+    padding-inline: 1.25rem;
+  }
+
+  .logo {
+    height: 56px;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .product-title {
+    font-size: 1.4rem;
+  }
+}
+
