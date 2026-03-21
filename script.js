@@ -270,8 +270,8 @@ const PRODUCTS = [
   // CASACOS --------------------------------------------------
   {
     id: "casaco-930",
-    title: "Casaco 930",
-    folder: "Casaco 930",
+    title: "Casaco REF 930",
+    folder: "Casaco REF 930",
     coverImage: "_MG_3740.jpg",
     images: [
       "_MG_3740.jpg",
@@ -289,8 +289,8 @@ const PRODUCTS = [
   },
   {
     id: "casaco-931",
-    title: "Casaco 931",
-    folder: "Casaco 931",
+    title: "Casaco REF 931",
+    folder: "Casaco REF 931",
     coverImage: "_MG_3689.jpg",
     images: [
       "_MG_3689.jpg",
@@ -310,8 +310,8 @@ const PRODUCTS = [
   },
   {
     id: "casaco-932",
-    title: "Casaco 932",
-    folder: "Casaco 932",
+    title: "Casaco REF 932",
+    folder: "Casaco REF 932",
     coverImage: "_MG_3664.jpg",
     images: [
       "_MG_3664.jpg",
