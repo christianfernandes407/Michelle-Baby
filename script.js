@@ -361,7 +361,7 @@ function renderHome() {
                 <img
                   src="${
                     p.coverImage
-                      ? `produtos/${p.folder}/${p.coverImage}`
+                      ? `produtos/${encodeURIComponent(p.folder)}/${encodeURIComponent(p.coverImage)}`
                       : "https://via.placeholder.com/600x450?text=Em+breve"
                   }"
                   alt="${p.title} - capa"
@@ -411,7 +411,9 @@ function renderProduct(id) {
 
   const images = (product.images || [])
     .map((fileName, index) => {
-      const src = `produtos/${product.folder}/${fileName}`;
+      const folder = encodeURIComponent(product.folder);
+      const file = encodeURIComponent(fileName);
+      const src = `produtos/${folder}/${file}`;
       const idx = index + 1;
       return `
         <figure class="gallery-item">
