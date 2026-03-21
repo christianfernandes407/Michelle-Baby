@@ -311,7 +311,7 @@ const PRODUCTS = [
   {
     id: "casaco-932",
     title: "Casaco 932",
-    folder: "Casaco 932",
+    folder: "casaco-932",
     coverImage: "_MG_3664.jpg",
     images: [
       "_MG_3664.jpg",
