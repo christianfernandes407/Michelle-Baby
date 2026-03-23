@@ -272,7 +272,7 @@ const PRODUCTS = [
     id: "casaco-930",
     title: "Casaco REF 930",
     folder: "Casaco REF 930",
-    coverImage: "_MG_3740.jpg",
+    coverImage: "MG3740.jpg",
     images: [
       "MG3740.jpg",
       "MG3742.jpg",
@@ -291,7 +291,7 @@ const PRODUCTS = [
     id: "casaco-931",
     title: "Casaco REF 931",
     folder: "Casaco REF 931",
-    coverImage: "_MG_3689.jpg",
+    coverImage: "MG3689.jpg",
     images: [
       "MG3689.jpg",
       "MG3691.jpg",
@@ -312,7 +312,7 @@ const PRODUCTS = [
     id: "casaco-932",
     title: "Casaco REF 932",
     folder: "Casaco REF 932",
-    coverImage: "_MG_3664.jpg",
+    coverImage: "MG3664.jpg",
     images: [
       "MG3664.jpg",
       "MG3668.jpg",
